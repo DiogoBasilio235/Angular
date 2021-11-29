@@ -1,0 +1,23 @@
+<!-- fxLayout is a property from Flex Layout. it will show everything as a column, just like Bootstrap but completly different from Boostratp-->
+<!-- the 10px is the Bootstrap Gutter-->
+<!-- -->
+<div class="container" fxLayout="column" fxLayotGap="10px">
+
+  <div fxFlex>
+    <div>
+      <h3>Menu</h3>
+      <hr>
+    </div>
+  </div>
+
+  <div fxFlex>
+    <mat-grid-list cols="2" rowHeight="200px">
+      <mat-grid-tile *ngFor="let dish of dishes">
+        <img height="200px" src={{dish.image}} alt={{dish.name}}>
+        <mat-grid-tile-footer>
+          <h1>{{dish.name | uppercase}}</h1>
+        </mat-grid-tile-footer>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
